@@ -38,7 +38,7 @@ function giveBill() {
   }
   else {
       for (const given of billGiven) {
-          if (given.totalAmount > 0) {
+          if (given.totalAmount > 0) { //This is so it doesn't show e.g. "0 bill(s) of 50USD.".
               text.innerHTML += given.totalAmount + " bill(s) of " + given.value + "USD.<br />";
           }  
       }
