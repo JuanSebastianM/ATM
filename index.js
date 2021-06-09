@@ -3,8 +3,6 @@ imageBill["50 bill"] = "Bills images/Bill50.png";
 imageBill["20 bill"] = "Bills images/Bill20.png";
 imageBill["10 bill"] = "Bills images/Bill10.png";
 
-var text = document.getElementById("info"); //Empty <p></p> in HTML to write the results of the withdrawal.
-
 class Bill {
   constructor(name, value, totalAmount) {
     this.image = new Image();
@@ -29,12 +27,13 @@ function count() {
   for (const t of machine) {
     total = total + t.value * t.totalAmount;
   }
-  textTotal.innerHTML = "This ATM currently has " + total + "USD.";
+  textTotal.innerHTML = "This ATM currently has <b>" + total + "USD</b>.";
 }
 var amountBills = 0; //Amount of bills the ATM will give the client.
 var divisor = 0; //Result of the division when iterating.
 var amountMoney = 0; //Amount of money to be withdrawn.
 
+var text = document.getElementById("info"); //Empty <p></p> in HTML to write the results of the withdrawal.
 var submit = document.getElementById("withdraw");
 submit.addEventListener("click", giveBill);
 function giveBill() {
@@ -72,6 +71,6 @@ function giveBill() {
     }
   } 
   else {
-    text.innerHTML += "There's no enough money, sorry :( <hr/>";
+    text.innerHTML += "There is not enough money, sorry :( <hr/>";
   }
 }
